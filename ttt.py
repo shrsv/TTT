@@ -1,4 +1,19 @@
 import pygame
+import sys
+
+class TTTGame:
+
+	def __init__(self):
+		pygame.init()
+		self.size = 320, 240
+		self.screen = pygame.display.set_mode(self.size)
+		self.black = 0, 0, 0
+
+		while 1:
+			for event in pygame.event.get():
+				if event.type == pygame.QUIT: sys.exit()
+
+			self.screen.fill(self.black)
 
 class TTT:
 
@@ -89,3 +104,5 @@ if __name__ == "__main__":
 	game.putX(2, 2)
 	game.putO(2, 0)
 	game.printMatrix()
+
+	g = TTTGame()
